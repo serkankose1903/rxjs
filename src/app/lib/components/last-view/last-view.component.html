@@ -1,0 +1,15 @@
+<div class="last-view-content">
+    <div *ngIf="viewList.length>0">
+        <ul>
+            <li *ngFor="let post of viewList">
+               <p> {{post.name}}</p>
+               <p> {{post.email}}</p>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="viewList.length==0" class="danger-content">
+        <div class="danger">
+            <strong>No viewed user</strong>
+        </div>
+    </div>
+</div>

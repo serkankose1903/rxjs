@@ -1,0 +1,17 @@
+@import '../../common.scss';
+
+.last-view-content {
+    ul {
+        margin: 0;
+        padding: 10px;
+        li {
+            background-color: #f8f9fa;
+            list-style: none;
+            padding: 10px;
+            margin-bottom: 5px;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

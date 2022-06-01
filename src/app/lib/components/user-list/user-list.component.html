@@ -1,0 +1,46 @@
+<div>
+  <form class="form">
+    <div class="search-content">
+      <div class="search-content">
+        <div class="search">
+          <input type="text" class="input" name="userSearch" placeholder="search..." ngModel
+            (ngModelChange)="changes($event)" />
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table *ngIf="LoadUserData$ | async as posts; else noData">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts">
+            <td>{{post.name}}</td>
+            <td>{{post.email}}</td>
+            <td>{{post.gender}}</td>
+            <td>{{post.status}}</td>
+            <td><a [routerLink]="['user', post.id]" (click)="latestView(post)" class="btn btn-success">View</a></td>
+          </tr>
+        </tbody>
+        <tfoot *ngIf="paginationData$ | async as paginationData">
+          <pagination *ngIf="paginationData.pages>1" (click)="pageChanged()" [(ngModel)]="currentPage" [ngModelOptions]="{standalone: true}"
+            [totalItems]="paginationData.total" [maxSize]="5"></pagination>
+        </tfoot>
+      </table>
+
+      <ng-template #noData>
+        <div class="danger-content">
+          <div class="danger">
+            <strong>No information data</strong>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>

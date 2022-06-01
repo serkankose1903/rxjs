@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="content">
+        <accordion [isAnimated]="true" *ngIf="isDisplay">
+            <accordion-group heading="{{user.title}}" *ngFor="let user of userDetail">
+                {{user.body}}
+            </accordion-group>
+        </accordion>
+        <div class="danger-content" *ngIf="!isDisplay">
+            <div class="danger">
+                <strong>No post</strong>
+            </div>
+        </div>
+    </div>
+</div>
