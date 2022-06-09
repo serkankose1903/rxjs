@@ -2,8 +2,10 @@
     <div *ngIf="viewList.length>0">
         <ul>
             <li *ngFor="let post of viewList">
-               <p> {{post.name}}</p>
-               <p> {{post.email}}</p>
+                <a [routerLink]="['user', post.id]">
+                    <p> {{post.name}}</p>
+                    <p> {{post.email}}</p>
+                </a>
             </li>
         </ul>
     </div>

@@ -9,8 +9,13 @@
             list-style: none;
             padding: 10px;
             margin-bottom: 5px;
-            p {
-                margin: 0;
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+                p {
+                    margin: 0;
+                }
             }
         }
     }
